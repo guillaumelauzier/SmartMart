@@ -1,0 +1,146 @@
+
+enum Day {
+    case monday, tuesday, wednesday, friday, saturday, sunday
+}
+
+enum WeekDay {
+    case monday
+    case tuesday
+    case wednesday
+    case thursday
+    case friday
+    case saturday
+    case sunday
+}
+
+enum WeekendDay {
+    case saturday, sunday
+}
+
+
+var today = Day.monday
+
+switch today {
+case .monday:
+    print ("Nous sommes lundi")
+case .saturday, .sunday:
+    print ("Nous sommes le vendredi")
+    
+default:
+    print ("Nous sommes en milieu de semaine")
+}
+
+
+////// Optionnels
+
+let codePersonnel: Int = 1000
+var salaire: Float?
+var age: UInt!
+
+var nom : String = "Pierre"
+
+// print (codePersonnel)
+print (salaire)
+
+if let sal = salaire {
+    print ("Mon salaire est connu")
+}
+else { print("Salaire inconnu")
+    
+}
+
+if let age = age {
+    print ("Age inconnu")
+}
+else {
+    print ("Age inconnu")
+}
+age = nil
+
+print (age)
+// print (nom)
+
+// nom = nil
+print (nom)
+
+// nom = nil
+// print (nom)
+
+switch salaire {
+case nil:
+    print("Salaire inconnu")
+default:
+    print("Salaire connu")
+}
+
+
+///SmartMart our supermarket business management tool
+
+class SmartMart {
+    
+    //Products
+    var productName : String
+    var productCategory : String
+    var productBrand : String
+    var productPrice : UInt
+    var productCode : UInt
+    var productDistributor : String
+    //Product Sales
+    
+    var productQuantity : UInt // InStore
+    var productSold : UInt
+    
+    //Product Order
+    
+    var storeQuantity : UInt // Quantities left
+    var storeOrders : UInt // Online Orders
+    var stockQuantity : UInt
+    var stockOrders : UInt
+    
+    init(productName: String, productCategory: String, productBrand: String, productPrice: UInt, productCode: UInt, productDistributor: String, productQuantity: UInt, productSold: UInt, storeQuantity: UInt, storeOrders: UInt, stockQuantity: UInt, stockOrders: UInt) {
+        self.productName = productName
+        self.productCategory = productCategory
+        self.productBrand = productBrand
+        self.productPrice = productPrice
+        self.productCode = productCode
+        self.productDistributor = productDistributor
+        self.productQuantity = productQuantity
+        self.productSold = productSold
+        self.storeQuantity = storeQuantity
+        self.stockQuantity = stockQuantity
+        self.stockOrders = stockOrders
+        
+    }
+    
+}
+
+class Distributors: SmartMart {
+    var distributorName : String
+    var distributorAddress : String
+    var distributorCountry : String
+    var distributorContact : String
+    
+    init(distributorName: String, distributorAddress: String, distributorCountry: String, distributorContact: String) {
+    self.distributorName = distributorName
+    self.distributorAddress = distributorAddress
+    self.distributorCountry = distributorCountry
+    self.distributorContact = distributorContact
+    
+        
+    }
+}
+
+class Stocks: SmartMart {
+    var stockCategory : String
+    var stockLocation : String
+    var stockBrand : String
+    var stockNumber : UInt
+    
+    init(stockCategory: String, stockLocation: String, stockBrand: String, stockNumber: UInt) {
+        self.stockCategory = stockCategory
+        self.stockLocation = stockLocation
+        self.stockBrand = stockBrand
+        self.stockNumber = stockNumber
+        
+    }
+}

@@ -1,0 +1,249 @@
+enum Day {
+    case monday, tuesday, wednesday, friday, saturday, sunday
+}
+
+enum WeekDay {
+    case monday
+    case tuesday
+    case wednesday
+    case thursday
+    case friday
+    case saturday
+    case sunday
+}
+
+enum WeekendDay {
+    case saturday, sunday
+}
+
+
+var today = Day.monday
+
+switch today {
+case .monday:
+    print ("Nous sommes lundi")
+case .saturday, .sunday:
+    print ("Nous sommes le vendredi")
+    
+default:
+    print ("Nous sommes en milieu de semaine")
+}
+
+
+////// Optionnels
+
+let codePersonnel: Int = 1000
+var salaire: Float?
+var age: UInt!
+
+var nom : String = "Pierre"
+
+// print (codePersonnel)
+print (salaire)
+
+if let sal = salaire {
+    print ("Mon salaire est connu")
+}
+else { print("Salaire inconnu")
+    
+}
+
+if let age = age {
+    print ("Age inconnu")
+}
+else {
+    print ("Age inconnu")
+}
+age = nil
+
+print (age)
+// print (nom)
+
+// nom = nil
+print (nom)
+
+// nom = nil
+// print (nom)
+
+switch salaire {
+case nil:
+    print("Salaire inconnu")
+default:
+    print("Salaire connu")
+}
+
+
+///SmartMart our supermarket business management tool
+
+class SmartMart {
+    
+    //Products
+    var productName : String = ""
+    var productCategory : String
+    var productBrand : String
+    var productPrice : Double
+    var productCode : UInt
+    var productDistributor : String
+    
+    //Product Sales
+
+    let storeStocks = Int
+    var productQuantity ≥ 5  // InStore
+    var productSold : UInt
+    
+    //Inventory
+    
+    let storeInventory ≥ 5
+    
+    
+    func min<T>(_ x: T, _ y: T) -> T where T : Comparable {
+        
+    func max<T>(_ x: T, _ y: T) -> T where T : Comparable
+    
+    //Product Order
+    
+    var storeQuantity : UInt // Quantities left
+    var storeOrders : UInt // Online Orders
+    var stockQuantity : UInt
+    var stockOrders : UInt
+    
+    
+    init (productName: String, productCategory: String, productBrand: String, productPrice: UInt, productCode: UInt, productDistributor: String, productQuantity: UInt, productSold: UInt, storeQuantity: UInt, storeOrders: UInt, stockQuantity: UInt, stockOrders: UInt) {
+        self.productName = productName
+        self.productCategory = productCategory
+        self.productBrand = productBrand
+        self.productPrice = productPrice
+        self.productCode = productCode
+        self.productDistributor = productDistributor
+        self.productQuantity = productQuantity
+        self.productSold = productSold
+        self.storeQuantity = storeQuantity
+        self.stockQuantity = stockQuantity
+        self.stockOrders = stockOrders
+        
+        init(storeStocks: Int) {
+        self.storeStocks = storeStocks
+        }
+        
+        static func ==(min: Stocks, max: Stocks) -> Int {
+            return min.storeStocks == max.storeStocks
+        }
+        
+        static func <(min: , max: Route) -> Bool {
+            return min.storeStocks < max.storeStocks
+        }
+        
+    }
+    
+}
+
+class Distributors: SmartMart {
+    var distributorName : String
+    var distributorAddress : String
+    var distributorCountry : String
+    var distributorContact : String
+    
+    super.init(distributorName: String, distributorAddress: String, distributorCountry: String, distributorContact: String) {
+        self.distributorName = distributorName
+        self.distributorAddress = distributorAddress
+        self.distributorCountry = distributorCountry
+        self.distributorContact = distributorContact
+        
+        
+    }
+}
+
+class Stocks: SmartMart {
+    var stockCategory : String
+    var stockLocation : String
+    var stockBrand : String
+    var stockNumber : UInt
+    
+    super.init(stockCategory: String, stockLocation: String, stockBrand: String, stockNumber: UInt) {
+        self.stockCategory = stockCategory
+        self.stockLocation = stockLocation
+        self.stockBrand = stockBrand
+        self.stockNumber = stockNumber
+        
+        func min<T>(_ x: T, _ y: T) -> T where T : Comparable
+        func max<T>(_ x: T, _ y: T) -> T where T : Comparable {
+            <#code#>
+        }<T>(_ x: T, _ y: T) -> T where T : Comparable
+        
+        let maxInt = max(5, 12) // returns 12
+        let maxInt = max(12.0, 18.5, 21, 26, 32.9, 19.1) // returns 32.9
+        
+    }
+}
+
+class Supply<T> {
+    var merchandise = [T] ()
+    func add(_ t:T) {
+        merchandise.append(t)
+    }
+}
+
+var supplyProducts = Supply<SmartMart>()
+var milk = SmartMart(productName: "Organic Milk", productCategory: "Milk", productBrand: "FarmCows", productPrice: 1.90, productCode: 432897932432342, productDistributor: "FarmersMarket", productQuantity: 950, productSold: 230, storeQuantity: 200, storeOrders: 12, stockQuantity: 750, stockOrders: 50)
+
+supplyProducts.add(milk)
+
+for smartMart in supplyProducts.merchandise {
+    print(milk.title)
+
+/*
+ 
+ min & max functions exemples..
+ 
+ Exemple:
+ 
+ func min<T>(_ x: T, _ y: T) -> T where T : Comparable {
+ <#code#>
+ }<T>(_ x: T, _ y: T) -> T where T : Comparable
+ func max<T>(_ x: T, _ y: T) -> T where T : Comparable {
+ <#code#>
+ }<T>(_ x: T, _ y: T) -> T where T : Comparable
+ 
+ 
+ Exemple:
+ 
+let numbers = [ 1, 42, 5, 21 ]
+var maxNumber = Int()
+
+for number in numbers {
+    maxNumber = max(maxNumber, number as Int)
+}
+
+print("the max number is \(maxNumber)")   // will be 42
+}
+ 
+ Exemple:
+ 
+ class Route: Comparable, CustomStringConvertible {
+ 
+ let distance: Int
+ var description: String {
+ return "Route with distance: \(distance)"
+ }
+ 
+ init(distance: Int) {
+ self.distance = distance
+ }
+ 
+ static func ==(lhs: Route, rhs: Route) -> Bool {
+ return lhs.distance == rhs.distance
+ }
+ 
+ static func <(lhs: Route, rhs: Route) -> Bool {
+ return lhs.distance < rhs.distance
+ }
+ 
+ }
+ 
+ let route1 = Route(distance: 4)
+ let route2 = Route(distance: 8)
+ 
+ let maxRoute = max(route1, route2)
+ print(maxRoute) // prints "Route with distance: 8"
+ 
+*/

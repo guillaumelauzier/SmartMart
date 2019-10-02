@@ -177,7 +177,7 @@ class SmartMart: Comparable {
     
     }
     
-    class Distributors: SmartMart {
+class Distributor: SmartMart {
         var distributorName : String
         var distributorAddress : String
         var distributorCountry : String
@@ -201,11 +201,13 @@ class Stocks: SmartMart {
         var stockBrand : String
         var stockNumber : UInt
         
-        super.init(stockCategory: String, stockLocation: String, stockBrand: String, stockNumber: UInt) {
+        init(productName: String, productCategory: String, productBrand: String, productPrice: Double, productCode: UInt, productDistributor: String, productQuantity: UInt, productSold: UInt, storeQuantity: UInt, storeOrders: UInt, stockQuantity: UInt, stockOrders: UInt, storeStocks: UInt, stockCategory: String, stockLocation: String, stockBrand: String, stockNumber: UInt) {
             self.stockCategory = stockCategory
             self.stockLocation = stockLocation
             self.stockBrand = stockBrand
             self.stockNumber = stockNumber
+            
+            super.init(productName: productName, productCategory: productCategory, productBrand: productBrand, productPrice: productPrice, productCode: productCode, productDistributor: productDistributor, productQuantity: productQuantity, productSold: productSold, storeQuantity: storeQuantity, storeOrders: storeOrders, stockQuantity: UInt, stockOrders: UInt, storeStocks: UInt)
             
             /*
             func min<T>(_ x: T, _ y: T) -> T where T : Comparable

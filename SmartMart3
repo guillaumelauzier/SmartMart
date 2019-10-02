@@ -185,7 +185,7 @@ class SmartMart: Comparable {
         
         
         ///
-        init(distributorName: String, distributorAddress: String, distributorCountry: String, distributorContact: String) {
+        super.init(distributorName: String, distributorAddress: String, distributorCountry: String, distributorContact: String) {
             self.distributorName = distributorName
             self.distributorAddress = distributorAddress
             self.distributorCountry = distributorCountry
@@ -195,13 +195,13 @@ class SmartMart: Comparable {
         }
     }
     
-    class Stocks: SmartMart {
+class Stocks: SmartMart {
         var stockCategory : String
         var stockLocation : String
         var stockBrand : String
         var stockNumber : UInt
         
-        init(stockCategory: String, stockLocation: String, stockBrand: String, stockNumber: UInt) {
+        super.init(stockCategory: String, stockLocation: String, stockBrand: String, stockNumber: UInt) {
             self.stockCategory = stockCategory
             self.stockLocation = stockLocation
             self.stockBrand = stockBrand
@@ -218,7 +218,7 @@ class SmartMart: Comparable {
             */
             
         }
-    }
+}
     
     class Supply<T> {
         var merchandise = [T] ()
@@ -228,7 +228,7 @@ class SmartMart: Comparable {
     }
     
     var supplyProducts = Supply<SmartMart>()
-var milk = SmartMart(productName: "Organic Milk", productCategory: "Milk", productBrand: "FarmCows", productPrice: 1.90, productCode: 432897932432342, productDistributor: "FarmersMarket", productQuantity: 950, productSold: 230, storeStocks: 50, storeQuantity: 100, stockQuantity: 750, stockOrders: 50)
+var milk = SmartMart(productName: "Organic Milk", productCategory: "Milk", productBrand: "FarmCows", productPrice: 1.90, productCode: 432897932432342, productDistributor: "FarmersMarket", productQuantity: 950, productSold: 230, storeQuantity: 100, storeOrders: 2, stockQuantity: 750, stockOrders: 50, storeStocks: 50)
     
     supplyProducts.add(milk)
     
